@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">B.U.R.T.</string>
+    <string name="acronim">Broadcast Usb Reverse Tethering</string>
+    <string name="button_start">start reverse tether</string>
+    <string name="button_stop">stop reverse tether</string>
+</resources>

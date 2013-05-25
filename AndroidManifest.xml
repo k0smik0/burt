@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyleft 2012 Massimiliano Leone - maximilianus@gmail.com .
+  
+  AndroidManifest.xml is part of burt.
+  
+  burt is free software; you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 3 of the License, or
+  (at your option) any later version.
+  
+  burt is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Lesser General Public License for more details.
+  
+  You should have received a copy of the GNU Lesser General Public License
+  along with burt ; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.iubris.burt"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" android:debuggable="false">
+        <activity
+            android:name=".UsbReverseTetheringActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />                
+            </intent-filter>
+        </activity>
+        <receiver android:name=".UsbReverseTetheringIncomingReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="net.iubris.burt.START"/>
+                <action android:name="net.iubris.burt.STOP"/>		                
+            </intent-filter>
+        </receiver>
+    </application>    
+</manifest>
